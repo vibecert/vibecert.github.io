@@ -1,0 +1,82 @@
+{
+ "schema_version": "vibecert/certificate@1",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-03T21:44:28.602797+00:00",
+ "identifier": "bcf81d7",
+ "private": false,
+ "repository": "claude-skills",
+ "branch": "feat/add-vibecert",
+ "commits": 9,
+ "changed_lines": 5382,
+ "generative_proportion": 0.992,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Questions name specific identifiers such as CheckRegistry, check_info and the rounding literal, which could only be asked after reading the output"
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "All four applicable guidelines were in context and the code complies, but every commit omits the (vibecert) scope GIT_PRACTICE.md requires in a monorepo"
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "265 of 5336 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median of 35 generated lines per producing prompt, with prompts naming concrete units of work"
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 3623 lines of code, against a repository baseline of 0.0"
+  }
+ ],
+ "findings": [
+  "S603: `subprocess` call: check for execution of untrusted input",
+  "S607: Starting a process with a partial executable path"
+ ]
+}
