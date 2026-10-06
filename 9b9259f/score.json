@@ -1,0 +1,80 @@
+{
+ "schema_version": "vibecert/certificate@1",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-06T16:44:17.831874+00:00",
+ "identifier": "9b9259f",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 4,
+ "changed_lines": 70,
+ "generative_proportion": 0.986,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 1,
+  "criticality": 3,
+  "risk": 1,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Multiple follow-up questions reference specific code identifiers and artifacts only knowable from reading the output, e.g. \"What is rest unpacking: initial_lr, schedule_steps, *rest = schedule[\\\"arguments\\\"]\", \"rest is being used as 'the rest' here, or 'rest' as in wait?\", and \"What is the checkpoint fuse script you've added?\", alongside others tied to specific decisions (\"If resume = true, other params don't actually matter because all picked up from what's left on disk?\", \"How are the different types of crashes (during warmup and during decay) detected?\")."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "git/GIT_PRACTICE.md was in context and the commit subjects comply exactly (e.g. 'feat(client): add resume var', 'chore(frontend): add resume var to lambda'), but coding/CODING_PRACTICE.md and python/PYTHON_CODING_PRACTICE.md (both applicable, since the diff touches .py files) and frontend/CLAUDE.md (applicable to the frontend lambda/workflow changes) were never read, so an applicable guideline never reached context."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "31 of 68 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 15 (well under the 50-line band-3 ceiling), driven by prompts that name precise units of work rather than outcomes, e.g. \"remove any inline comments and the 'main body' of docstring comments\" (1 line), \"Rename, then, to avoid this ambiguity\" (2 lines), and \"add in a comment above a link to the theory behind this... for lines 236 and 237\" (19 lines); the lone 215-line outlier is a \"Resume what you were doing\" continuation of already-scoped work rather than a whole-application ask, so it doesn't trigger the automatic band-1 override."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 62 lines of code, against a repository baseline of 0.007"
+  }
+ ],
+ "findings": []
+}
