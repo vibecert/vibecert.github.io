@@ -1,0 +1,83 @@
+{
+ "schema_version": "vibecert/certificate@1",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-06T17:42:39.144161+00:00",
+ "identifier": "62d6332",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "mesa-build",
+ "branch": "refactor/finetune/compute-lr-schedule-on-resume",
+ "commits": 2,
+ "changed_lines": 199,
+ "generative_proportion": 0.923,
+ "certified": true,
+ "score": 2.0,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 1,
+  "criticality": 2,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Follow-up questions like '13. What is rest unpacking: initial_lr, schedule_steps, *rest = schedule[\"arguments\"]' and '14. rest is being used as the rest here, or rest as in wait?' reference a specific line and identifier in the produced code, and '12. What is the checkpoint fuse script you've added?' and '10. How are the different types of crashes (during warmup and during decay) detected?' reference specific artifacts/decisions in the output, which could only be asked after reading it."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "GIT_PRACTICE.md was in context and both commits (\"refactor(finetune): compute lr schedule on resume\", \"test(finetune): add for lr schedule calculation\") comply with its Angular/lowercase/50-char rules, but CODING_PRACTICE.md and PYTHON_CODING_PRACTICE.md, which apply to this pure-Python diff (lib/finetune/src/finetune/mlx_trainer.py, lib/finetune/tests/test_mlx_trainer.py), were never read."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "23 of 168 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Producing prompts have a median of 2 generated lines (4 of 5 are single-purpose line-level asks like 'remove inline comments', 'add a comment above... with a link to the theory', 'just links, no extra text'), and the one large-output prompt ('Resume what you were doing') yielded a single atomic unit (the _resume_lr_schedule method plus its call-site wiring and matching test, per commits e5ebedc/069a4d8) rather than an outcome-level request, so it is not scored down for size."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "behavioural checks not configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "4 comment lines over 152 lines of code, against a repository baseline of 0.049"
+  }
+ ],
+ "findings": [
+  "S603: `subprocess` call: check for execution of untrusted input",
+  "S607: Starting a process with a partial executable path"
+ ]
+}
