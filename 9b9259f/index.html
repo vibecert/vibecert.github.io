@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeCert private repository</title>
+<style>:root {
+  --ink: #1a1a1a; --paper: #fdfdfc; --rule: #d8d6d1; --soft: #6b6862;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e6e1; --paper: #16161a; --rule: #34343a; --soft: #9a978f;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 2.5rem 1rem 4rem;
+  background: var(--paper); color: var(--ink);
+  font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+main { max-width: 48rem; margin: 0 auto; }
+h1 {
+  font-size: 1rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--soft); margin: 0 0 1.5rem;
+}
+.score { font-size: 3.5rem; font-weight: 700; line-height: 1; margin: 0; }
+.score small { font-size: 1.25rem; font-weight: 400; color: var(--soft); }
+.caveat { color: var(--soft); margin: .5rem 0 0; }
+.subject { margin: 1.5rem 0 2.5rem; color: var(--soft); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+table { width: 100%; border-collapse: collapse; margin: 0 0 2rem; }
+th {
+  text-align: left; font-size: .75rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--soft); font-weight: 600;
+  padding: 0 .75rem .5rem 0; border-bottom: 1px solid var(--rule);
+}
+td {
+  padding: .75rem .75rem .75rem 0; vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+td.band { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.evidence { color: var(--soft); font-size: .9rem; }
+.panel {
+  border: 1px solid var(--rule); border-radius: .5rem;
+  padding: 1rem 1.25rem; margin: 0 0 1.5rem;
+}
+.panel h2 {
+  font-size: .75rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--soft); margin: 0 0 .5rem;
+}
+footer {
+  border-top: 1px solid var(--rule); padding-top: 1.5rem;
+  color: var(--soft); font-size: .875rem;
+}
+footer a { color: inherit; }
+@media (max-width: 34rem) {
+  td.evidence, th.evidence { display: none; }
+  .score { font-size: 2.5rem; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>VibeCert</h1>
+<p class="score">2.7<small>/3</small></p>
+<p class="subject">A private repository &middot; 4 commits &middot; 70 changed lines &middot; 99% generated</p>
+<table>
+<thead><tr><th>Metric</th><th>Score</th><th>Adjusted</th><th class="evidence">Evidence</th></tr></thead>
+<tbody>
+<tr><td>1. Follow-up questions</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">Multiple follow-up questions reference specific code identifiers and artifacts only knowable from reading the output, e.g. &quot;What is rest unpacking: initial_lr, schedule_steps, *rest = schedule[\&quot;arguments\&quot;]&quot;, &quot;rest is being used as &#x27;the rest&#x27; here, or &#x27;rest&#x27; as in wait?&quot;, and &quot;What is the checkpoint fuse script you&#x27;ve added?&quot;, alongside others tied to specific decisions (&quot;If resume = true, other params don&#x27;t actually matter because all picked up from what&#x27;s left on disk?&quot;, &quot;How are the different types of crashes (during warmup and during decay) detected?&quot;).</td></tr>
+<tr><td>2. Coding guidelines</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">git/GIT_PRACTICE.md was in context and the commit subjects comply exactly (e.g. &#x27;feat(client): add resume var&#x27;, &#x27;chore(frontend): add resume var to lambda&#x27;), but coding/CODING_PRACTICE.md and python/PYTHON_CODING_PRACTICE.md (both applicable, since the diff touches .py files) and frontend/CLAUDE.md (applicable to the frontend lambda/workflow changes) were never read, so an applicable guideline never reached context.</td></tr>
+<tr><td>3. Output amendments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">31 of 68 generated lines were rewritten after the author challenged them</td></tr>
+<tr><td>4. Prompt granularity</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">Median generated lines per producing prompt is 15 (well under the 50-line band-3 ceiling), driven by prompts that name precise units of work rather than outcomes, e.g. &quot;remove any inline comments and the &#x27;main body&#x27; of docstring comments&quot; (1 line), &quot;Rename, then, to avoid this ambiguity&quot; (2 lines), and &quot;add in a comment above a link to the theory behind this... for lines 236 and 237&quot; (19 lines); the lone 215-line outlier is a &quot;Resume what you were doing&quot; continuation of already-scoped work rather than a whole-application ask, so it doesn&#x27;t trigger the automatic band-1 override.</td></tr>
+<tr><td>5. Secondary tool usage</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">behavioural checks configured and ran</td></tr>
+<tr><td>6. Generative comments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">0 comment lines over 62 lines of code, against a repository baseline of 0.007</td></tr>
+</tbody>
+</table>
+<div class="panel"><h2>Weight</h2><p>Carried weight 3, being the highest of length 1, criticality 3 and risk 1.</p></div>
+<footer><p><code>9b9259f</code> &middot; issued 2026-10-06 &middot; scored under vibecert/rubrics@1</p><p>A VibeCert score is self-assessed. It records how generative tooling was used on one branch, not that the code is correct. <a href="https://l.martinchapman.co.uk/vibecert">What this measures</a>.</p></footer>
+</main>
+</body>
+</html>
