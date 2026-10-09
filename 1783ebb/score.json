@@ -1,7 +1,7 @@
 {
  "schema_version": "vibecert/certificate@1",
  "rubrics_version": "vibecert/rubrics@1",
- "issued_at": "2026-10-09T15:10:11.194620+00:00",
+ "issued_at": "2026-10-09T15:15:25.787965+00:00",
  "identifier": "1783ebb",
  "site": "https://vibecert.github.io",
  "private": false,
@@ -28,7 +28,7 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "Most follow-up questions name specific identifiers or decisions in the generated code, such as 'Any reason for the store_git function over pass(s) git?', 'What is ensure_line?', 'What supplies the vault_dir variable?', 'Summarise the responsibility split between vault_pass and vault_history' and 'Is it right to hardcode vault here?', and none of these could be asked without reading the output."
+   "evidence": "Most of the author's questions name specific identifiers or decisions in the output: the 'Blob changed' message, store_git, ensure_line, vault_dir_exists, the vault_dir variable, the vault_pass/vault_history split, the temp path and the hardcoded 'vault'. Asking these required reading the generated code."
   },
   {
    "number": 2,
@@ -37,7 +37,7 @@
    "state": "scored",
    "raw": 2,
    "adjusted": 1,
-   "evidence": "GIT_PRACTICE.md was in context and most commit subjects follow the conventional form, but compliance is partial: 'text: fix syntax based on linter' uses a type the rule does not allow, and the 'vault' scope is used in a repository that is not a monorepo, which the rule forbids."
+   "evidence": "The git and general rules were in context, and the branch broadly follows them: commit subjects are lower case, under 50 characters and have no full stops, and the README lines break at full stops. Compliance is partial, though, because five commits use a `(vault)` scope (for example `chore(vault): prevent move`), which GIT_PRACTICE.md reserves for monorepos, and passs is not one."
   },
   {
    "number": 3,
@@ -55,7 +55,7 @@
    "state": "scored",
    "raw": 2,
    "adjusted": 1,
-   "evidence": "The median is 53 generated lines across 14 producing prompts, inside the 50 to 200 band; most prompts name specific units of work (for example dropping merge support, inlining vault_dir_exists, adding a --help flag), but some brief prompts produced more than 200 lines each, such as 'Ok, implement this' (233 lines), 'Both' (212) and the CHANGELOG request (215)."
+   "evidence": "The median is 53 generated lines per producing prompt across 14 producing prompts, which places the branch in band 2 (50 to 200); most prompts name a unit of work, but 'Ok, implement this' (233 lines), 'Both' (212 lines) and the vault CHANGELOG request (215 lines) each went past the 200-line reviewable limit."
   },
   {
    "number": 5,
