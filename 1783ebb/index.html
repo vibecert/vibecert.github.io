@@ -62,17 +62,17 @@ footer a { color: inherit; }
 <body>
 <main>
 <h1>VibeCert</h1>
-<p class="score">2.0<small>/3</small></p>
-<p class="subject"><code>passs</code>, <code>feat/add-vault</code> &middot; 7 commits &middot; 928 changed lines &middot; 100% generated</p>
+<p class="score">2.3<small>/3</small></p>
+<p class="subject"><code>passs</code>, <code>feat/add-vault</code> &middot; 8 commits &middot; 934 changed lines &middot; 100% generated</p>
 <table>
 <thead><tr><th>Metric</th><th>Score</th><th>Adjusted</th><th class="evidence">Evidence</th></tr></thead>
 <tbody>
-<tr><td>1. Follow-up questions</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">Most questions after the first implementation point at specific code or decisions, including vault_dir_exists, store_git vs pass(s) git, commit_meta_change, ensure_line, the vault_pass/vault_history split, &#x27;what supplies vault_dir&#x27;, &#x27;is it right to hardcode vault here&#x27; and &#x27;is this error message right&#x27;. Only someone who had read the output could ask those.</td></tr>
-<tr><td>2. Coding guidelines</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">The git rules were in context and the commit subjects follow the type, lowercase and length rules, but five of seven use a `vault` scope in a non-monorepo where the rules say to omit it, so compliance is partial.</td></tr>
-<tr><td>3. Output amendments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">948 of 847 generated lines were rewritten after the author challenged them</td></tr>
-<tr><td>4. Prompt granularity</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">The median is 55 generated lines per producing prompt (13 of 43 prompts produced output), which falls in the 50 to 200 band; most prompts were small scoped requests, but &#x27;Ok, implement this&#x27; (233 lines), &#x27;Yes, keep a CHANGELOG...&#x27; (215) and &#x27;Both&#x27; (212) exceeded the 200-line reviewable limit.</td></tr>
-<tr><td>5. Secondary tool usage</td><td class="band">1/3</td><td class="band">1/3</td><td class="evidence">static checks not configured and did not run</td></tr>
-<tr><td>6. Generative comments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">4 comment lines over 747 lines of code, against a repository baseline of 0.007</td></tr>
+<tr><td>1. Follow-up questions</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">Most follow-up questions name specific identifiers or decisions in the generated code, such as &#x27;Any reason for the store_git function over pass(s) git?&#x27;, &#x27;What is ensure_line?&#x27;, &#x27;What supplies the vault_dir variable?&#x27;, &#x27;Summarise the responsibility split between vault_pass and vault_history&#x27; and &#x27;Is it right to hardcode vault here?&#x27;, and none of these could be asked without reading the output.</td></tr>
+<tr><td>2. Coding guidelines</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">GIT_PRACTICE.md was in context and most commit subjects follow the conventional form, but compliance is partial: &#x27;text: fix syntax based on linter&#x27; uses a type the rule does not allow, and the &#x27;vault&#x27; scope is used in a repository that is not a monorepo, which the rule forbids.</td></tr>
+<tr><td>3. Output amendments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">244 of 853 generated lines were rewritten after the author challenged them</td></tr>
+<tr><td>4. Prompt granularity</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">The median is 53 generated lines across 14 producing prompts, inside the 50 to 200 band; most prompts name specific units of work (for example dropping merge support, inlining vault_dir_exists, adding a --help flag), but some brief prompts produced more than 200 lines each, such as &#x27;Ok, implement this&#x27; (233 lines), &#x27;Both&#x27; (212) and the CHANGELOG request (215).</td></tr>
+<tr><td>5. Secondary tool usage</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">behavioural checks configured and ran</td></tr>
+<tr><td>6. Generative comments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">4 comment lines over 753 lines of code, against a repository baseline of 0.007</td></tr>
 </tbody>
 </table>
 <div class="panel"><h2>Weight</h2><p>Carried weight 3, being the highest of length 3, criticality 1 and risk 1.</p></div>
