@@ -1,17 +1,17 @@
 {
  "schema_version": "vibecert/certificate@1",
  "rubrics_version": "vibecert/rubrics@1",
- "issued_at": "2026-10-09T14:38:52.906559+00:00",
+ "issued_at": "2026-10-09T15:10:11.194620+00:00",
  "identifier": "1783ebb",
  "site": "https://vibecert.github.io",
  "private": false,
  "repository": "passs",
  "branch": "feat/add-vault",
- "commits": 7,
- "changed_lines": 928,
+ "commits": 8,
+ "changed_lines": 934,
  "generative_proportion": 1.0,
  "certified": true,
- "score": 2.0,
+ "score": 2.3,
  "scored": 6,
  "applicable": 6,
  "weights": {
@@ -28,7 +28,7 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "Most questions after the first implementation point at specific code or decisions, including vault_dir_exists, store_git vs pass(s) git, commit_meta_change, ensure_line, the vault_pass/vault_history split, 'what supplies vault_dir', 'is it right to hardcode vault here' and 'is this error message right'. Only someone who had read the output could ask those."
+   "evidence": "Most follow-up questions name specific identifiers or decisions in the generated code, such as 'Any reason for the store_git function over pass(s) git?', 'What is ensure_line?', 'What supplies the vault_dir variable?', 'Summarise the responsibility split between vault_pass and vault_history' and 'Is it right to hardcode vault here?', and none of these could be asked without reading the output."
   },
   {
    "number": 2,
@@ -37,7 +37,7 @@
    "state": "scored",
    "raw": 2,
    "adjusted": 1,
-   "evidence": "The git rules were in context and the commit subjects follow the type, lowercase and length rules, but five of seven use a `vault` scope in a non-monorepo where the rules say to omit it, so compliance is partial."
+   "evidence": "GIT_PRACTICE.md was in context and most commit subjects follow the conventional form, but compliance is partial: 'text: fix syntax based on linter' uses a type the rule does not allow, and the 'vault' scope is used in a repository that is not a monorepo, which the rule forbids."
   },
   {
    "number": 3,
@@ -46,7 +46,7 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "948 of 847 generated lines were rewritten after the author challenged them"
+   "evidence": "244 of 853 generated lines were rewritten after the author challenged them"
   },
   {
    "number": 4,
@@ -55,16 +55,16 @@
    "state": "scored",
    "raw": 2,
    "adjusted": 1,
-   "evidence": "The median is 55 generated lines per producing prompt (13 of 43 prompts produced output), which falls in the 50 to 200 band; most prompts were small scoped requests, but 'Ok, implement this' (233 lines), 'Yes, keep a CHANGELOG...' (215) and 'Both' (212) exceeded the 200-line reviewable limit."
+   "evidence": "The median is 53 generated lines across 14 producing prompts, inside the 50 to 200 band; most prompts name specific units of work (for example dropping merge support, inlining vault_dir_exists, adding a --help flag), but some brief prompts produced more than 200 lines each, such as 'Ok, implement this' (233 lines), 'Both' (212) and the CHANGELOG request (215)."
   },
   {
    "number": 5,
    "name": "secondary_tools",
    "title": "Secondary tool usage",
    "state": "scored",
-   "raw": 1,
-   "adjusted": 1,
-   "evidence": "static checks not configured and did not run"
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
   },
   {
    "number": 6,
@@ -73,7 +73,7 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "4 comment lines over 747 lines of code, against a repository baseline of 0.007"
+   "evidence": "4 comment lines over 753 lines of code, against a repository baseline of 0.007"
   }
  ],
  "findings": []
