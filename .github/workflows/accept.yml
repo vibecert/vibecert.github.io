@@ -30,7 +30,7 @@ jobs:
           CHANGED: ${{ steps.changes.outputs.all_files }}
         run: |
           mapfile -t changed < <(jq -r '.[]' <<< "$CHANGED")
-          uvx --from "git+https://git.sr.ht/~martinchapman/claude-skills@66767b88b75202c5d65494fda1046c85eb0e2202#subdirectory=vibecert/scripts" \
+          uvx --from "git+https://github.com/vibecert/skill@9f1b167831a86c6ba763e01e56f308cd20b1bed8#subdirectory=scripts" \
             vibecert-accept submission --submitter "$SUBMITTER" \
             --site-url https://vibecert.github.io --changed "${changed[@]}"
   merge:
