@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-29T15:28:48.158542+00:00",
+ "identifier": "8a10421",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "MESA-Docsynth",
+ "branch": "feat/add-asset-domain-template",
+ "commits": 5,
+ "head": "46544d3883698c54376e332ba1182cf307542ff4",
+ "uncommitted": false,
+ "changed_lines": 262,
+ "generative_proportion": 0.318,
+ "certified": true,
+ "score": 3.0,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 2,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most questions interrogate the produced output (\"Is this your addition?\", \"When is this shown to the user (if at all)?\", \"So this is a new README?\", \"Is literal braces really a likely thing in a prompt?\", \"Why does it need to be a separate job?\"), and the braces question could only come from someone who had read the generated template."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The coding, python, git and INDEX rule files that cover this change were all in context (the iac and javascript files do not apply, and the litellm AGENTS.md files sit in .venv and are unrelated), and all five commit subjects follow the required form (lowercase, under 50 characters, valid types, no attribution, no full stops) without being asked."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "53 of 83 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 7 (9 of 22 prompts produced output), well under 50, and the author's requests were small, named units such as adding a vibecert action and reusing existing failed-test handling in the same job."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "static checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "2 comment lines over 30 lines of code, against a repository baseline of 0.003"
+  }
+ ],
+ "findings": [
+  "personal data referenced"
+ ]
+}
