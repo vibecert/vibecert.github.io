@@ -1,0 +1,82 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-30T17:55:49.579704+00:00",
+ "identifier": "6899296",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 4,
+ "head": "61aa536c9a9d60c6ad22b8e6dffad31abb6722e2",
+ "uncommitted": false,
+ "changed_lines": 509,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 1,
+  "risk": 1,
+  "applied": 2
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Many questions could only come from reading the generated output, e.g. \"'+asyncpg'?\", \"'CMD-SHELL'?\", \"What is value_wo\", \"Not sure how I feel about the the busybox hack\", \"ignore changes to the underlying image?\", \"What is arg lock\" and \"Is the default here true? If so, why are we switching it off?\"."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The coding, git and iac rule files all applied to this Terraform, workflow and README change and all reached context, and the four commit subjects (feat, feat(server), ci(server), docs(server)) follow the required Angular form, lower case, under 50 characters, with no full stop or body, which counts as a rule applied actively. I did not read the diff, so compliance of the code itself is not checked."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "322 of 509 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 10 (29 of 196 prompts produced output), well under 50, with prompts mostly small follow-ups; the single 535-line 'Keep Cloudfront' prompt is an outlier that does not move the median."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 1,
+   "adjusted": 1,
+   "evidence": "static checks not configured and did not run"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "1 comment lines over 275 lines of code, against a repository baseline of 0.039"
+  }
+ ],
+ "findings": []
+}
