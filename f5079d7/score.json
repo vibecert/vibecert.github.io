@@ -1,0 +1,85 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-31T14:55:56.474804+00:00",
+ "identifier": "f5079d7",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 11,
+ "head": "63906e9dcb3e48148a20bdb7812bcceadb732028",
+ "uncommitted": true,
+ "changed_lines": 4253,
+ "generative_proportion": 0.981,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most of the ~100 questions are about specific generated output, e.g. #128 'What is value_wo', #135 'ignore changes to the underlying image?', #167 'Why these locals?', #244 'Why disable the cache?', #290 'Why is health check moved to a function?', #41 'Where's the dagster prefix?', so the questions came from someone who had read the code."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The author's coding, git and python rules were all in context, and all 11 commit subjects follow the Angular form (lowercase, under 50 characters, scope only for the flows and server subprojects, none for the new project). The never-read prefect AGENTS.md files are third-party files in the venv, not the author's own practice. I did not check the Python diff against the python rules."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "403 of 4171 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 26 (55 of 319 prompts produced output), well under 50, and the prompts name specific units such as 'Split to a types file', 'Rename it to AWS' and 'add vibecert as a ci step', though about 7 approvals ('y') each accepted 200 to 558 lines."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 1168 lines of code, against a repository baseline of 0.019"
+  }
+ ],
+ "findings": [
+  "S310: Audit URL open for permitted schemes. Allowing use of `file:` or custom schemes is often unexpected.",
+  "S603: `subprocess` call: check for execution of untrusted input"
+ ]
+}
