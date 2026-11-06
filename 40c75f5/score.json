@@ -1,0 +1,85 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-06T12:02:50.254331+00:00",
+ "identifier": "40c75f5",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "mesa-build",
+ "branch": "feat/flag-records-for-claude-correction",
+ "commits": 6,
+ "head": "261c04b412f60539ce410e6eb4c17d4a380b56cb",
+ "uncommitted": true,
+ "changed_lines": 878,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 2,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most follow-up questions are about specific output: one quotes the reported 'Missing lung side (528 records)' finding and asks how it can occur under a valid schema, and others ask about the added generics, a missing heading, and why chestradqwen has only one flag."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "Every applicable rule file was in context (the general, coding, git and Python rules and mesa-build's CLAUDE.md; the litellm AGENTS.md files are vendored .venv files), and the code broadly complies, with typed locals and Google-style docstrings in batch_corrector.py and correction_rules.py, but compliance is partial: three of the six commit subjects break the 50-character limit ('feat(datagen): add add_items, dedupe and flag actions' is 53, and 'feat(pipelines): add chestradqwen correction config' and 'feat: support flag rules in correction config skill' are 51 each)."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 1,
+   "adjusted": 1,
+   "evidence": "14 of 809 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The median is 26 generated lines per producing prompt across 11 prompts, which places the branch in band 3, and the prompts name units of work (a run-status mechanism, no ids in files, a default path when there are no rules); the one outlier is a single prompt that bundled add_items, dedupe, the flag route and the rules into 769 lines."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "4 comment lines over 694 lines of code, against a repository baseline of 0.045"
+  }
+ ],
+ "findings": [
+  "S311: Standard pseudo-random generators are not suitable for cryptographic purposes",
+  "personal data referenced"
+ ]
+}
