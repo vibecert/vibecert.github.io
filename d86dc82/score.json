@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-09T18:03:58.199269+00:00",
+ "identifier": "d86dc82",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 4,
+ "head": "10e972236e50bd7e78743afca75d4d274b6b43f7",
+ "uncommitted": false,
+ "changed_lines": 221,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 3,
+  "risk": 2,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most questions target specific output, e.g. #46 'What is fullmatch', #96 'could PREFECT_API_TLS_INSECURE_SKIP_VERIFY mask any issues', #63 'Why doesn't infer-local have a lockfile?', #84 'Is having const and default required?', #94 'Is this name accurate?' and #92 on when pools are created, which could only come from someone who had read the generated plan and code."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The general, git and Python rules and the project CLAUDE.md applied and were in context, and the four commit subjects follow the Angular form with lower-case subjects under 50 characters, but nothing shows a rule changed a decision. The Prefect AGENTS.md files that apply to the Prefect code in flows were never read."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "66 of 192 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The median is 11 generated lines per producing prompt (13 of 101 prompts produced output), and the largest single prompt was 85 lines, all well under the 50-line band limit and the 200-line reviewable limit."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 95 lines of code, against a repository baseline of 0.012"
+  }
+ ],
+ "findings": [
+  "S310: Audit URL open for permitted schemes. Allowing use of `file:` or custom schemes is often unexpected."
+ ]
+}
