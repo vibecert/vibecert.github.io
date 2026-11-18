@@ -1,0 +1,86 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-18T13:17:39.534126+00:00",
+ "identifier": "073e62b",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "MESA-Docsynth",
+ "branch": "feat/add-regex-filters",
+ "commits": 6,
+ "head": "b189c7177994b025f2ae337ce366d698cdb26c58",
+ "uncommitted": false,
+ "changed_lines": 644,
+ "generative_proportion": 0.902,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 2,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most of the human questions concern specific output and decisions (\"why have we moved from schema -> schema_name?\", \"Why can pattern be none?\", \"SamplingElement purely need for typehint?\", \"document_type\\..* would be redundant though, because it's not narrowed?\", \"I Can see this used in supplement, but not in the main prompt?\"), which could only be asked by someone who had read the generated code."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "Python, testing, coding, core and git rules all applied to this diff (src/tests Python changes, Angular-style commit subjects), but only INDEX.md reached context while PYTHON_CODING_PRACTICE.md, PYTHON_TESTING_PRACTICE.md, CODING_PRACTICE.md and GIT_PRACTICE.md were never read, and nothing shows a guideline driving a decision, so the commits comply broadly without any active application."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "65 of 563 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 10 (12 of 80 prompts produced output, only 130 and 100 above 50), and the prompts are small step-wise requests such as 'continue with steps 5.1-5.2' and 'y' on discrete units."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 505 lines of code, against a repository baseline of 0.004"
+  }
+ ],
+ "findings": [
+  "S106: Possible hardcoded password assigned to argument: \"password\"",
+  "S311: Standard pseudo-random generators are not suitable for cryptographic purposes",
+  "S324: Probable use of insecure hash functions in `hashlib`: `md5`"
+ ]
+}
