@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-26T15:58:33.561315+00:00",
+ "identifier": "abcb987",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 15,
+ "head": "02930a89902345d03e14dec85e0cf85cb609d11f",
+ "uncommitted": false,
+ "changed_lines": 2238,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 3.0,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most questions point at specific code and decisions, and some could only come from someone who had read the output, such as \"Help me understand the empty overrides\", \"fromkeys builds the dict inline?\", \"model copy? a pydantic thing?\", \"Why are we saying only male and female here?\" (about SEXES) and \"Is there a chance that additionalEligibilityCriteria and ageRange appear in the CT free-text, resulting in some sort of duplication?\"."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Every rule file that applies to this Python, docs and git change was in context (the only one never read is frontend/node_modules/lunr/CONTRIBUTING.md, a vendored dependency file and not one of the author's guidelines); the diff complies, for example the typed, docstringed CTGovClient with Final private constants and the tools book plus CLAUDE.md updated alongside the code; and the rules were applied actively, shown by the nit(tools) commit that capitalises acronyms in class names to follow PEP 8 and by all 15 commits being scoped, lowercase, imperative Angular subjects with 'so'/'as' reason bodies and no attribution lines."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "1046 of 1991 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The median is 18 generated lines across the 89 prompts that produced output, which is well under the band 3 limit of 50; most prompts approve or adjust a single staged unit (e.g. 'Groups here should be a type too'), and the few large outputs (e.g. 1225 lines from one 'y') are outliers that leave the median unchanged."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "2 comment lines over 1416 lines of code, against a repository baseline of 0.012"
+  }
+ ],
+ "findings": [
+  "personal data referenced"
+ ]
+}
